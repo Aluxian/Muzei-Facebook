@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Global -->
+    <style name="Theme.Muzei" parent="android:Theme.Holo">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>
+        <item name="android:windowTranslucentNavigation" tools:ignore="NewApi">true</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.Muzei.ListView.DropDown</item>
+        <item name="android:popupMenuStyle">@style/Widget.Muzei.PopupMenu</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance.Muzei.Medium</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.Muzei.LargePopupMenu</item>
+    </style>
+
+    <!-- Settings activity -->
+    <style name="Theme.Muzei.Settings" parent="Theme.Muzei">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:actionBarStyle">@style/Settings.ActionBar</item>
+    </style>
+
+    <style name="Settings.ActionBar" parent="android:Widget.Holo.ActionBar">
+        <item name="android:background">@null</item>
+        <item name="android:displayOptions">disableHome|showCustom</item>
+    </style>
+
+    <!-- Facebook login dialog -->
+    <style name="Theme.Muzei.FacebookLogin" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>
+        <item name="android:windowTranslucentNavigation" tools:ignore="NewApi">true</item>
+    </style>
+
+    <!-- Refresh interval picker -->
+    <style name="Theme.Muzei.TimePicker">
+        <item name="bpDialogBackground">@drawable/white_item_pressed</item>
+        <item name="bpButtonBackground">@drawable/white_selectable_bg</item>
+        <item name="bpKeyBackground">@drawable/white_selectable_bg</item>
+        <item name="bpDividerColor">@color/white</item>
+        <item name="bpTextColor">@color/picker_button_text</item>
+    </style>
+
+    <!-- Widgets -->
+    <style name="Widget.Muzei.PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/popup_bg</item>
+        <item name="android:dropDownSelector">@drawable/white_selectable_bg</item>
+    </style>
+
+    <!-- https://code.google.com/p/android/issues/detail?id=24922 -->
+    <style name="Widget.Muzei.ListView.DropDown" parent="android:Widget.Holo.ListView.DropDown">
+        <item name="android:listSelector">@drawable/white_selectable_bg</item>
+    </style>
+
+    <style name="Widget.Muzei.PreferenceLayout" parent="Theme.Muzei">
+        <item name="android:background">@drawable/white_selectable_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">36dp</item>
+        <item name="android:paddingRight">36dp</item>
+    </style>
+
+    <style name="Widget.Muzei.NumberPickerLayout" parent="Theme.Muzei">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Text Appearance -->
+    <style name="TextAppearance.Muzei.Medium" parent="android:TextAppearance.Holo.Medium">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="TextAppearance.Muzei.Large" parent="android:TextAppearance.Holo.Large">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="TextAppearance.Muzei.Large.Shadow" parent="TextAppearance.Muzei.Large">
+        <item name="android:shadowColor">#5000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
+    <style name="TextAppearance.Muzei.PreferenceTitle" parent="TextAppearance.Muzei.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:shadowColor">#3000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="TextAppearance.Muzei.PreferenceToggle" parent="TextAppearance.Muzei.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:shadowColor">#3000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="TextAppearance.Muzei.LargePopupMenu" parent="TextAppearance.Muzei.Medium">
+        <item name="android:textColor">#eee</item>
+    </style>
+
+</resources>

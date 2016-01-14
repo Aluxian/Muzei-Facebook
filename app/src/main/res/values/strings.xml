@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+    <string name="app_id">494137420697712</string>
+    <string name="app_name">Facebook for Muzei</string>
+
+    <string name="source_name">Facebook</string>
+    <string name="source_description">Amazing photos from your Facebook account</string>
+    <string name="default_byline">Tap here to connect with your Facebook account</string>
+
+    <string name="done">Done</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="action_view_timeline">View Timeline</string>
+    <string name="action_logout">Logout</string>
+
+    <string name="contentdesc_overflow">More options</string>
+    <string name="contentdesc_avatar">Your profile picture</string>
+    <string name="contentdesc_fb_login">Log in with Facebook</string>
+
+    <string name="preference_albums">Select albums</string>
+    <string name="preference_shuffle">Shuffle photos</string>
+    <string name="preference_wifi_only">On Wi-Fi only</string>
+    <string name="preference_interval">Refresh interval</string>
+
+</resources>

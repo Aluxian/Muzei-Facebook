@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+    <!-- Profile image -->
+    <ImageView
+        android:id="@+id/img_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/contentdesc_avatar"
+        android:padding="4dp"/>
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:indeterminateOnly="true"
+        android:indeterminate="true"
+        android:alpha="0"/>
+
+    <!-- Facebook login button -->
+    <com.facebook.widget.LoginButton
+        android:id="@+id/btn_auth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/contentdesc_fb_login"
+        android:alpha="0"/>
+
+    <!-- Container for the user's name and preferences -->
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_profile"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical"
+        android:alpha="0">
+
+        <!-- User name -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="#1fff"
+            android:padding="6dp">
+
+            <TextView
+                style="@style/TextAppearance.Muzei.Large.Shadow"
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="28sp"/>
+        </FrameLayout>
+
+        <!-- Containers for preferences, albums and interval picker -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Preference items container -->
+            <LinearLayout
+                android:id="@+id/container_preferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Albums to display -->
+                <FrameLayout
+                    style="@style/Widget.Muzei.PreferenceLayout"
+                    android:id="@+id/pref_albums">
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceTitle"
+                        android:text="@string/preference_albums"/>
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceToggle"
+                        android:text="@string/yes"/>
+                </FrameLayout>
+
+                <!-- Shuffle photos -->
+                <FrameLayout
+                    style="@style/Widget.Muzei.PreferenceLayout"
+                    android:id="@+id/pref_shuffle">
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceTitle"
+                        android:text="@string/preference_shuffle"/>
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceToggle"
+                        android:id="@+id/pref_shuffle_toggle_on"
+                        android:text="@string/yes"/>
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceToggle"
+                        android:id="@+id/pref_shuffle_toggle_off"
+                        android:text="@string/no"/>
+                </FrameLayout>
+
+                <!-- WiFi Only -->
+                <FrameLayout
+                    style="@style/Widget.Muzei.PreferenceLayout"
+                    android:id="@+id/pref_wifi_only">
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceTitle"
+                        android:text="@string/preference_wifi_only"/>
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceToggle"
+                        android:id="@+id/pref_wifi_only_toggle_on"
+                        android:text="@string/yes"/>
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceToggle"
+                        android:id="@+id/pref_wifi_only_toggle_off"
+                        android:text="@string/no"/>
+                </FrameLayout>
+
+                <!-- Refresh interval -->
+                <FrameLayout
+                    style="@style/Widget.Muzei.PreferenceLayout"
+                    android:id="@+id/pref_interval">
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceTitle"
+                        android:text="@string/preference_interval"/>
+
+                    <TextView
+                        style="@style/TextAppearance.Muzei.PreferenceToggle"
+                        android:id="@+id/pref_interval_toggle"/>
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!-- Interval picker -->
+            <LinearLayout
+                android:id="@+id/container_interval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dp"
+                android:layout_marginRight="36dp"
+                android:gravity="center_horizontal"
+                android:visibility="invisible"
+                android:alpha="0">
+
+                <NumberPicker
+                    android:id="@+id/interval_picker_days"
+                    style="@style/Widget.Muzei.NumberPickerLayout"/>
+
+                <NumberPicker
+                    android:id="@+id/interval_picker_hours"
+                    style="@style/Widget.Muzei.NumberPickerLayout"/>
+
+                <NumberPicker
+                    android:id="@+id/interval_picker_minutes"
+                    style="@style/Widget.Muzei.NumberPickerLayout"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

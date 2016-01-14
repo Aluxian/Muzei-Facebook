@@ -1,0 +1,48 @@
+apply plugin: 'android'
+
+/*
+ * Gets the version name from the latest Git tag
+ */
+def gitVersionName = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'describe', '--tags'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+/*
+ * Gets the version code from the latest Git tag
+ */
+def gitVersionCode = { ->
+    return Integer.parseInt(gitVersionName().split("-")[1].substring(1))
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:19.1.+'
+    compile 'com.google.android.apps.muzei:muzei-api:1.+'
+    compile 'com.doomonafireball.betterpickers:library:1.5.+'
+    compile 'com.squareup.picasso:picasso:2.2.+'
+    compile files('libs/libGoogleAnalyticsServices.jar')
+    compile project(':facebook')
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
+
+    defaultConfig {
+        versionCode gitVersionCode()
+        versionName gitVersionName()
+        minSdkVersion 17
+        targetSdkVersion 19
+    }
+
+    buildTypes {
+        release {
+            runProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
